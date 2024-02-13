@@ -1,11 +1,36 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
+import { validateLoginInData, validateSignUpData } from "../utils/validate";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState();
+  const email = useRef(null);
+  const password = useRef(null);
+  const name = useRef(null);
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+    setErrorMessage(null);
+  };
+
+  const handleButtonClick = () => {
+    if (isSignInForm) {
+      const loginErrorMessage = validateLoginInData(
+        email.current.value,
+        password.current.value
+      );
+      setErrorMessage(loginErrorMessage);
+    } else {
+      const signUpErrorMessage = validateSignUpData(
+        email.current.value,
+        name.current.value,
+        password.current.value
+      );
+      console.log(name.current.value);
+      console.log(signUpErrorMessage);
+      setErrorMessage(signUpErrorMessage);
+    }
   };
 
   return (
@@ -19,7 +44,10 @@ const Login = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-      <form className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 text-white rounded-sm bg-black bg-opacity-65 w-full max-w-md">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 text-white rounded-sm bg-black bg-opacity-65 w-full max-w-md"
+      >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign up"}
         </h1>
@@ -27,7 +55,7 @@ const Login = () => {
           type="email"
           placeholder="Email or phone number"
           className="bg-black bg-opacity-25 border rounded-lg p-4 w-full my-4"
-          required
+          ref={email}
         />
         {isSignInForm ? (
           ""
@@ -35,8 +63,8 @@ const Login = () => {
           <input
             type="text"
             placeholder="Full name"
+            ref={name}
             className="bg-black bg-opacity-25 border rounded-lg p-4 w-full my-4"
-            required
           />
         )}
 
@@ -44,9 +72,13 @@ const Login = () => {
           type="password"
           placeholder="Password"
           className="bg-black bg-opacity-25 border rounded-lg p-4 w-full my-4"
-          required
+          ref={password}
         />
-        <button className="p-4 my-4 bg-red-700 w-full rounded-lg">
+        <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
+        <button
+          className="p-4 my-4 bg-red-700 w-full rounded-lg"
+          onClick={handleButtonClick}
+        >
           {isSignInForm ? "Sign In" : "Sign up"}
         </button>
         <p className="text-center text-gray-500">OR</p>
