@@ -1,8 +1,19 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { validateLoginInData, validateSignUpData } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
   const email = useRef(null);
@@ -21,15 +32,67 @@ const Login = () => {
         password.current.value
       );
       setErrorMessage(loginErrorMessage);
+      if (loginErrorMessage === null) {
+        //Signin logic
+        signInWithEmailAndPassword(
+          auth,
+          email.current.value,
+          password.current.value
+        )
+          .then((userCredential) => {
+            // Signed in
+            // const user = userCredential.user;
+            navigate("/browse");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setErrorMessage(errorCode + "-" + errorMessage);
+          });
+      }
     } else {
       const signUpErrorMessage = validateSignUpData(
         email.current.value,
         name.current.value,
         password.current.value
       );
-      console.log(name.current.value);
-      console.log(signUpErrorMessage);
       setErrorMessage(signUpErrorMessage);
+      if (signUpErrorMessage === null) {
+        //signup logic
+        createUserWithEmailAndPassword(
+          auth,
+          email.current.value,
+          password.current.value
+        )
+          .then((userCredential) => {
+            // Signed up
+            const user = userCredential.user;
+            updateProfile(user, {
+              displayName: name.current.value,
+              photoURL: "https://avatars.githubusercontent.com/u/29210607?v=4",
+            })
+              .then(() => {
+                const { uid, email, displayName, photoURL } = auth.currentUser;
+                dispatch(
+                  addUser({
+                    uid: uid,
+                    email: email,
+                    displayName: displayName,
+                    photoURL: photoURL,
+                  })
+                );
+                navigate("/browse");
+              })
+              .catch((error) => {
+                setErrorMessage(error.message);
+              });
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setErrorMessage(errorCode + "-" + errorMessage);
+          });
+      }
     }
   };
 

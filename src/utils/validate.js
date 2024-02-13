@@ -24,8 +24,6 @@ export const validateSignUpData = (email, name, password) => {
   const isPasswordValid =
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
 
-  console.log(isEmailValid, isNameValid, isPasswordValid);
-
   if (!isEmailValid) {
     return "Email Id is not valid";
   }
