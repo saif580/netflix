@@ -41,8 +41,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-screen px-8 py-2 z-10 flex justify-between">
-      <div className="absolute inset-0 bg-black opacity-15"></div>
+    <div className="absolute w-screen px-8 py-2 z-20 flex justify-between bg-gradient-to-b from-black">
+      <div className="absolute inset-0 bg-black opacity-[2%]"></div>
       <img className="w-40" src={LOGO} alt="netflix logo" />
       {user && (
         <div className="flex p-2">
@@ -53,7 +53,7 @@ const Header = () => {
           />
           <button
             onClick={handleSignOut}
-            className="cursor-pointer font-bold text-black z-20"
+            className="cursor-pointer font-bold text-white z-20"
           >
             Sign out
           </button>
