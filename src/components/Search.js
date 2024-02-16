@@ -6,7 +6,7 @@ import { BG_URL } from "../utils/contants";
 const Search = () => {
   return (
     <div>
-      <div className="absolute w-full h-full -z-10">
+      <div className="fixed w-full h-full -z-10">
         <img
           className="w-full h-full object-cover"
           src={BG_URL}

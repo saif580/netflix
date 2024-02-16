@@ -1,5 +1,5 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,11 +9,11 @@ import { toggleSearchView } from "../utils/searchSlice";
 import { changeLanguage } from "../utils/configFile";
 
 const Header = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
   const user = useSelector((store) => store.user);
   const showSearch = useSelector((store) => store.search.showSearch);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignOut = async () => {
     try {
@@ -44,9 +44,9 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleSearchClick = () => {
+  const handleSearchClick = useCallback(() => {
     dispatch(toggleSearchView());
-  };
+  }, []);
 
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -58,22 +58,24 @@ const Header = () => {
       <img className="w-40" src={LOGO} alt="netflix logo" />
       {user && (
         <div className="flex p-2">
-          <select
-            className="z-20 p-2 m-2 text-white bg-gray-900 border-none rounded-lg bg-opacity-5"
-            onChange={handleLanguageChange}
-          >
-            {SUPPORTED_LANGUAGES.map((language) => (
-              <option
-                className="text-black"
-                key={language.identifier}
-                value={language.identifier}
-              >
-                {language.name}
-              </option>
-            ))}
-          </select>
+          {showSearch && (
+            <select
+              className="z-20 p-2 m-2 text-white bg-gray-900 border-none rounded-lg bg-opacity-5"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((language) => (
+                <option
+                  className="text-black"
+                  key={language.id}
+                  value={language.identifier}
+                >
+                  {language.name}
+                </option>
+              ))}
+            </select>
+          )}
           <button
-            onClick={handleSearchClick}
+            onClick={() => handleSearchClick()}
             className="px-4 text-white font-bold z-20 bg-opacity-10"
           >
             {showSearch ? "🎥 Home" : "🔍 Search"}
