@@ -14,8 +14,10 @@ const Search = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-      <SearchBar />
-      <GptMovieSuggestion />
+      <div className="pt-[30%] pb-[40%] md:p-[15%] lg:p-[10%]">
+        <SearchBar />
+        <GptMovieSuggestion />
+      </div>
     </div>
   );
 };

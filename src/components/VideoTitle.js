@@ -6,20 +6,20 @@ const VideoTitle = ({ title, overview }) => {
   return (
     <div className="w-full aspect-video relative bg-gradient-to-r from-black text-white z-10">
       <div className="absolute inset-0 flex px-14 flex-col w-full justify-center">
-        <h1 className="font-bold sm:text-sm  md:text-xl lg:text-6xl lg:w-1/2 md:w-full">
+        <h1 className="font-bold text-sm  md:text-xl  lg:w-1/2 md:w-full">
           {title}
         </h1>
         {!isSmallScreen && (
-          <p className="py-4  sm:text-xs md:text-lg  lg:text-xl lg:w-1/2 ">
+          <p className="py-4  sm:text-xs md:text-lg  lg:w-1/2 ">
             {overview}
           </p>
         )}
         <div className="flex mt-8">
-          <button className="bg-white text-black mr-4 sm:p-1 md:p-2 lg:p-3 rounded-lg hover:bg-opacity-80 sm:text-xs md:text-lg ld:text-xl">
-            Play
+          <button className="bg-white text-black mr-2 md:mr-4 p-2 md:p-3 rounded-sm md:rounded-lg hover:bg-opacity-80 text-xs md:text-lg ">
+            ▶️Play
           </button>
-          <button className="bg-gray-500 mx-2 text-white sm:p-1 md:p-2 lg:p-3  bg-opacity-50 rounded-lg sm:text-xs md:text-lg ld:text-xl">
-            More info
+          <button className="bg-gray-500 mx-2 text-white p-2 md:p-3 bg-opacity-50 rounded-sm md:rounded-lg text-xs md:text-lg ">
+            ℹ️More info
           </button>
         </div>
       </div>

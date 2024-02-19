@@ -39,8 +39,6 @@ const SearchBar = () => {
 
     const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
     const tmdbResults = await Promise.all(promiseArray);
-    // const flattenedResults = tmdbResults.map((results) => results[0]);
-    // console.log(tmdbResults);
     dispatch(
       addGptMoviesResult({
         movieNames: gptMovies,
@@ -50,9 +48,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="pt-[10%] flex justify-center rounded-lg">
+    <div className="flex justify-center rounded-lg">
       <form
-        className="bg-black w-1/2 grid grid-cols-12"
+        className="bg-black w-full md:w-3/4   grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
@@ -63,7 +61,7 @@ const SearchBar = () => {
         />
         <button
           onClick={handleGptSearchClick}
-          className="col-span-3 m-4 py-2 px-4 rounded-lg bg-red-700 text-white"
+          className="text-xs md:text-lg col-span-3 m-4 py-2 px-4 rounded-lg bg-red-700 text-white"
         >
           {lang[language].search}
         </button>
