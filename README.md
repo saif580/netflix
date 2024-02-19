@@ -1,10 +1,8 @@
 # Netflix Clone
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnetflix-sand-beta.vercel.app%2F)](https://netflix-sand-beta.vercel.app/)
-[![GitHub license](https://img.shields.io/github/license/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/issues)
 [![GitHub stars](https://img.shields.io/github/stars/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/network)
+
 
 <b>Netflix Clone</b>
 This project is a Netflix-like streaming application that incorporates a recommendation system powered by OpenAI's GPT for movie suggestions. It is built using Create React App, configured with Tailwind CSS, and integrates with Firebase for user authentication and data storage.
@@ -35,7 +33,7 @@ This project is a Netflix-like streaming application that incorporates a recomme
 
 - **Responsive Design:** Ensures the site looks appealing on various screen sizes with responsive Tailwind classes.
 
-## Netflix GPT
+## Netflix Clone
 
 This project is a Netflix-like streaming application that incorporates a recommendation system powered by OpenAI's GPT (Generative Pre-trained Transformer) for movie suggestions. It is built using Create React App, configured with Tailwind CSS, and integrates with Firebase for user authentication and data storage.
 
