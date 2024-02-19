@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Netflix Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fnetflix-sand-beta.vercel.app%2F)](https://netflix-sand-beta.vercel.app/)
+[![GitHub license](https://img.shields.io/github/license/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/issues)
+[![GitHub stars](https://img.shields.io/github/stars/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/network)
 
-## Available Scripts
+<b>Netflix Clone</b>
+This project is a Netflix-like streaming application that incorporates a recommendation system powered by OpenAI's GPT for movie suggestions. It is built using Create React App, configured with Tailwind CSS, and integrates with Firebase for user authentication and data storage.
 
-In the project directory, you can run:
+## Project Structure
 
-### `npm start`
+- **Header:** A responsive header with navigation, user profile, and search functionality.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Routing:** Implements React Router for smooth navigation between pages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Login/Sign Up Forms:** User authentication forms with form validation.
 
-### `npm test`
+- **Firebase Integration:** Utilizes Firebase for user authentication, including user sign-up, sign-in, and sign-out.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Redux Store:** Manages user state using Redux and Redux Toolkit with the userSlice.
 
-### `npm run build`
+- **Profile Update:** Allows users to update their profile information, including display name and profile picture.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Bug Fixes:** Addresses issues related to user sign-up data and redirects between pages based on authentication status.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **TMDB API Integration:** Registers with TMDB, fetches data from the now playing movies list API, and manages the state using the movieSlice in the Redux store.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Movie Containers:** Implements MainContainer and SecondaryContainer for an organized structure.
 
-### `npm run eject`
+- **Trailer Video Integration:** Fetches trailer video data from TMDB and embeds YouTube videos with autoplay and mute functionalities.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Tailwind CSS Styling:** Applies Tailwind CSS classes to enhance the visual appeal of components.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Responsive Design:** Ensures the site looks appealing on various screen sizes with responsive Tailwind classes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Netflix GPT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project is a Netflix-like streaming application that incorporates a recommendation system powered by OpenAI's GPT (Generative Pre-trained Transformer) for movie suggestions. It is built using Create React App, configured with Tailwind CSS, and integrates with Firebase for user authentication and data storage.
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Header:** A responsive header with navigation, user profile, and search functionality.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Routing:** Implements React Router for smooth navigation between pages.
 
-### Code Splitting
+- **Login/Sign Up Forms:** User authentication forms with form validation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Firebase Integration:** Utilizes Firebase for user authentication, including user sign-up, sign-in, and sign-out.
 
-### Analyzing the Bundle Size
+- **Redux Store:** Manages user state using Redux and Redux Toolkit with the userSlice.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Profile Update:** Allows users to update their profile information, including display name and profile picture.
 
-### Making a Progressive Web App
+- **Bug Fixes:** Addresses issues related to user sign-up data and redirects between pages based on authentication status.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **TMDB API Integration:** Registers with TMDB, fetches data from the now playing movies list API, and manages the state using the movieSlice in the Redux store.
 
-### Advanced Configuration
+- **Movie Containers:** Implements MainContainer and SecondaryContainer for an organized structure.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Trailer Video Integration:** Fetches trailer video data from TMDB and embeds YouTube videos with autoplay and mute functionalities.
 
-### Deployment
+- **Tailwind CSS Styling:** Applies Tailwind CSS classes to enhance the visual appeal of components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Responsive Design:** Ensures the site looks appealing on various screen sizes with responsive Tailwind classes.
 
-### `npm run build` fails to minify
+## GPT Search Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Search Bar:** Integrates a GPT-powered search bar for enhanced movie suggestions.
+
+- **GPT API Call:** Fetches data from the OpenAI GPT API for movie suggestions based on user queries.
+
+- **Movie Suggestions Container:** Reuses the Movie List component to display GPT-generated movie suggestions.
+
+- **Memoization:** Implements memoization techniques to optimize performance.
+
+## Additional Features
+
+- **Multi-language Support:** Incorporates a bonus feature for multi-language support within the application.
