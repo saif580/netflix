@@ -1,6 +1,6 @@
 Website url- https://netflix-sand-beta.vercel.app/
 
-Netflix Clone
+<b>Netflix Clone</b>
 This project is a Netflix-like streaming application that incorporates a recommendation system powered by OpenAI's GPT for movie suggestions. It is built using Create React App, configured with Tailwind CSS, and integrates with Firebase for user authentication and data storage.
 
 
