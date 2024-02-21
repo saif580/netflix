@@ -76,3 +76,14 @@ This project is a Netflix-like streaming application that incorporates a recomme
 ## Additional Features
 
 - **Multi-language Support:** Incorporates a bonus feature for multi-language support within the application.
+  
+![Screenshot (100)](https://github.com/saif580/netflix/assets/29210607/cea733ba-0cb4-4f26-ab03-fd06f6a506be)
+
+![Screenshot (101)](https://github.com/saif580/netflix/assets/29210607/8458f532-183a-4a90-b83c-260b9d58ce71)
+
+![Screenshot (102)](https://github.com/saif580/netflix/assets/29210607/7d99b82e-188b-419f-9990-0487024f4ae3)
+
+![Screenshot (103)](https://github.com/saif580/netflix/assets/29210607/cbe46cc8-cdcc-4ad8-b1b7-9ce67bdbfc95)
+
+
+
