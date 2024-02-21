@@ -1,3 +1,4 @@
+
 export const LOGO =
   "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png";
 
@@ -22,8 +23,3 @@ export const SUPPORTED_LANGUAGES = [
   { id: "2", identifier: "hindi", name: "Hindi" },
   { id: "3", identifier: "spanish", name: "Spanish" },
 ];
-
-export const OPENAI_KEY = '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'
-
-export const REACT_APP_TMDB_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIwNGI4Njk1OTFmNzViODgzMDgyMjdhNDNlODhjYSIsInN1YiI6IjY1Y2NiMzJhZWZkM2MyMDE3YzM3YjMzYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CBOkSDMAXbbcIXMovV8Gpvuhh4iF-pfWQYaSzSjcoow'
-
