@@ -1,6 +1,6 @@
 # Netflix Clone
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fnetflix-sand-beta.vercel.app%2F)](https://netflix-sand-beta.vercel.app/)
+[![Website](https://netflix-clone-eight-green.vercel.app/)
 [![GitHub stars](https://img.shields.io/github/stars/YourGitHubUsername/YourRepoName)](https://github.com/YourGitHubUsername/YourRepoName/stargazers)
 
 
